@@ -6,10 +6,6 @@ val declarativeSumInput = listOf(
 )
 
 fun declarativeSum (input: List<String>): Int = input
-    .filter(::isNumber)
+    .filter { it.matches(Regex("\\d+")) }
     .map(String::toInt)
     .sum()
-
-fun isNumber(str: String): Boolean {
-    return str.matches(Regex("\\d+"))
-}
